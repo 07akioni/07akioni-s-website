@@ -26,10 +26,10 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container" style="font-family:Adobe Gothic Std">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ address }}">07akioni</a>
+                    <a class="navbar-brand" href="/blog">07akioni</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ address }}">Blog</a></li>
+                    <li class="active"><a href="/blog">Blog</a></li>
                     <li><a href="http://www.baidu.com">Lab</a></li>
                     <li><a href="http://www.baidu.com">About</a></li>
             </div>
@@ -41,7 +41,7 @@
                         <div class="panel-body">
                             <div class="entry-text-body">
                                 <div class="entry-header">
-                                    <a href="{{ address }}{{ actPage }}/P{{ post.id }}"><h2><b>{{ post.title }}</b></h2></a>
+                                    <a href="{{ actPage }}/P{{ post.id }}"><h2><b>{{ post.title }}</b></h2></a>
                                 </div>
                                 <div class="entry-text">
                                     <p>{{ post.abstract }}</p>
@@ -69,15 +69,15 @@
         <div class="container">
             <div class="page5mid">
                 <ul class="pagination">
-                    <li><a href="{{ address }}{{ prevPage }}" >Prev</a></li>
+                    <li><a href="{{ prevPage }}" >Prev</a></li>
                     {% for i in pageSet%}
                         {% if i != actPage %}
-                            <li><a href="{{ address }}{{ i }}">{{ i }}</a></li>
+                            <li><a href="{{ i }}">{{ i }}</a></li>
                         {% else %}
-                            <li class="active"><a href="{{ address }}{{ i }}">{{ i }}</a></li>
+                            <li class="active"><a href="{{ i }}">{{ i }}</a></li>
                         {% endif %}
                     {% endfor %}
-                    <li><a href="{{ address }}{{ nextPage }}">Next</a></li>
+                    <li><a href="{{ nextPage }}">Next</a></li>
                 </ul>
             </div>
         </div>

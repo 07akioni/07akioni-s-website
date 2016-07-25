@@ -4,7 +4,7 @@ from blog.models import BlogPost
 from django.views.decorators.clickjacking import xframe_options_exempt
 import math
 
-address = 'http://159.203.225.211/'
+address = ""
 
 # Create your views here.
 @xframe_options_exempt
