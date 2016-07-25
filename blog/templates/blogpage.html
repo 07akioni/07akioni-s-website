@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>07akioni's website</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-language" content="zh-CN"/>
+	<!-- To ensure proper rendering and touch zooming, add the following
+        <meta> tag inside the <head> element: -->
+        <!-- The width=device-width part sets the width of the page to follow
+        the screen-width of the device (which will vary depending on the
+        device).
+        The initial-scale=1 part sets the initial zoom level when the page is
+        first loaded by the browser. -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{% static 'blog/bootstrap-3.3.6-dist/css/bootstrap.css' %}">
+        <!-- jQuery library -->
+        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
+        <!-- Latest compiled JavaScript -->
+        <!--script src="{% static 'blog/bootstrap-3.3.6-dist/js/bootstrap.js' %}"></script-->
+        <link rel="stylesheet" href="{% static 'blog/07akioni.css' %}">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container" style="font-family:Adobe Gothic Std">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ address }}">07akioni</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ address }}">Blog</a></li>
+                    <li><a href="http://www.baidu.com">Lab</a></li>
+                    <li><a href="http://www.baidu.com">About</a></li>
+            </div>
+        </nav>
+        <div class="container blog-content">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="entry-text-body">
+                            <div class="entry-header">
+                                <h2><b>{{ post.title }}</b></h2>
+                            </div>
+                            <div class="entry-text">
+                                <p>{{ post.body }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="entry-info-body">
+                            <p style="color:grey;font-size:15px">{{ post.timestamp }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img alt="07akioni" src="{% static 'blog/07akioni.jpg' %}" class="profile"></img>
+                        <p class="profile">
+                            07akioni<hr>菜鸡一只
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="announce-post">
+            Powered by Django, Bootstrap
+        </footer>
+    </body>
+</html>

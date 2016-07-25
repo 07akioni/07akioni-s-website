@@ -1,0 +1,40 @@
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from blog.models import BlogPost
+from django.views.decorators.clickjacking import xframe_options_exempt
+import math
+
+address = 'http://159.203.225.211/'
+
+# Create your views here.
+@xframe_options_exempt
+def blogHomePage(request) :
+    return HttpResponseRedirect('1')
+
+@xframe_options_exempt
+def blogPage(request, page_index) :
+    pageSet = []
+    posts = BlogPost.objects.all()
+    sizeOfPosts = len(posts)
+    maxPage = int(math.ceil(sizeOfPosts / 5))
+    maxPage = max(1, maxPage)
+    prevPage = str(int(page_index) - 1)
+    if page_index == '1' :
+        prevPage = '1';
+    midnum = int(page_index)
+    for i in range(max(1, midnum - 2), min(midnum + 3, maxPage + 1)) :
+            pageSet.append(str(i))
+    if maxPage > int(page_index) :
+        nextPage = str(1 + int(page_index))
+    else :
+        nextPage = str(maxPage)
+    posts = posts.order_by('-timestamp')[5 * (int(page_index) - 1) : 5 * int(page_index)]
+    context = {'posts': posts, 'address' : address + 'blog/' , 'pageSet' : pageSet, 'actPage' : page_index,
+                'nextPage' : nextPage, 'prevPage' : prevPage}
+    return render(request, 'HomePage.html', context)
+
+@xframe_options_exempt
+def postPage(request, id_index) :
+    post = BlogPost.objects.get(id = int(id_index))
+    context = {'address' : address + 'blog/', 'post' : post}
+    return render(request, 'blogpage.html', context)

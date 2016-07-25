@@ -1,0 +1,61 @@
+footer.announce-home {
+    text-align: center;
+    font-size: 15px;
+    font-family: PingFangSC-Regular;
+    color: #777;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+footer.announce-post {
+    text-align: center;
+    font-size: 15px;
+    font-family: PingFangSC-Regular;
+    color: #777;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p.profile {
+    font-family: Adobe Gothic Std, PingFangSC-Regular;
+    font-size: 16px;
+}
+
+img.profile {
+     width: 100px;
+     height: 100px;
+     float: left;
+     margin-right: 20px;
+}
+
+div.entry-text-body{
+    margin-left:30px;
+}
+
+div.entry-info-body{
+    margin-left:30px;
+}
+
+div.entry-text{
+    font-size:15px;
+}
+
+div.entry-header{
+    margin-bottom: 30px;
+}
+
+div.blog-content{
+    padding-top: 65px;
+    font-family: PingFangSC-Regular;
+}
+
+div.page5mid{
+    position : absolute;
+    left : 50%;
+}
+
+div.page5mid li {
+    float : left;
+    position : relative;
+    right : 50%;
+}
