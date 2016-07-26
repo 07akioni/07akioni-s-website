@@ -8,7 +8,7 @@ address = ""
 
 # Create your views here.
 def homePage(request) :
-    return HttpResponseRedirect('blog/1')
+    return HttpResponseRedirect('/blog/1')
 
 def blogHomePage(request) :
     return HttpResponseRedirect('1')
