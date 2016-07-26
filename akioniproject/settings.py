@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't_##hh*+o2-0r3u!eu)^xe$dl+fd^_87)kx8ifqp^)rak1(r+6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '159.203.225.211', '.07akioni.com', '.trustclass.com']
 
@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_akioniproject',
         'USER': 'root',
-        'PASSWORD': 'nnlnjgwdo1A'
+        'PASSWORD': 'root'
     }
 }
 
@@ -121,5 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_ROOT='static'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    '/home/hrsonion/Desktop/Github/07akioni-s-website/static/'
+]
