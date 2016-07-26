@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_akioniproject',
         'USER': 'root',
-        'PASSWORD': 'root'
+        'PASSWORD': 'nnlnjgwdo1A'
     }
 }
 
