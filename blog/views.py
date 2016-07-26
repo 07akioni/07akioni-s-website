@@ -7,11 +7,12 @@ import math
 address = ""
 
 # Create your views here.
-@xframe_options_exempt
+def homePage(request) :
+    return HttpResponseRedirect('blog/1')
+
 def blogHomePage(request) :
     return HttpResponseRedirect('1')
 
-@xframe_options_exempt
 def blogPage(request, page_index) :
     pageSet = []
     posts = BlogPost.objects.all()
@@ -33,7 +34,6 @@ def blogPage(request, page_index) :
                 'nextPage' : nextPage, 'prevPage' : prevPage}
     return render(request, 'HomePage.html', context)
 
-@xframe_options_exempt
 def postPage(request, id_index) :
     post = BlogPost.objects.get(id = int(id_index))
     context = {'address' : address + 'blog/', 'post' : post}

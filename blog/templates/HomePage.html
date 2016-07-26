@@ -44,7 +44,7 @@
                                     <a href="{{ actPage }}/P{{ post.id }}"><h2><b>{{ post.title }}</b></h2></a>
                                 </div>
                                 <div class="entry-text">
-                                    <p>{{ post.abstract }}</p>
+                                    <p>{{ post.abstract | linebreaks}}</p>
                                 </div>
                             </div>
                             <hr>
