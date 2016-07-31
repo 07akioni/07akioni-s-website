@@ -20,6 +20,6 @@ import blog
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
-    url(r'^$', blog.views.homePage),
     url(r'^lab/', include('lab.urls')),
+    url(r'^$', blog.views.homePage),
 ]
