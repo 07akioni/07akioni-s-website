@@ -5,7 +5,7 @@
     <head>
         <title>07akioni's website</title>
         <meta charset="utf-8">
-        <meta http-equiv="content-language" content="zh-CN" />
+        <meta http-equiv="content-language" content="zh-CN"/>
 	<!-- To ensure proper rendering and touch zooming, add the following
         <meta> tag inside the <head> element: -->
         <!-- The width=device-width part sets the width of the page to follow
@@ -22,7 +22,6 @@
         <!-- Latest compiled JavaScript -->
         <!--script src="{% static 'blog/bootstrap-3.3.6-dist/js/bootstrap.js' %}"></script-->
         <link rel="stylesheet" href="{% static 'blog/07akioni.css' %}">
-
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -31,31 +30,19 @@
                     <a class="navbar-brand" href="/blog">07akioni</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/blog">Blog</a></li>
+                    <li><a href="/blog">Blog</a></li>
                     <li><a href="/lab">Lab</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li class="active"><a href="/about">About</a></li>
             </div>
         </nav>
         <div class="container blog-content">
             <div class="col-xs-9">
-                {% for post in posts %}
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="entry-text-body">
-                                <div class="entry-header">
-                                    <a href="{{ actPage }}/P{{ post.id }}"><h2><b>{{ post.title }}</b></h2></a>
-                                </div>
-                                <div class="entry-text">
-                                    <p>{{ post.abstract | linebreaks}}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="entry-info-body">
-                                <p style="color:grey;font-size:15px">{{ post.timestamp }}</p>
-                            </div>
-                        </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>I don't know what to say.</p>
+                        <p>Hello world!</p>
                     </div>
-                {% endfor %}
+                </div>
             </div>
             <div class="col-xs-3">
                 <div class="panel panel-default">
@@ -68,22 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="page5mid">
-                <ul class="pagination">
-                    <li><a href="{{ prevPage }}" >Prev</a></li>
-                    {% for i in pageSet%}
-                        {% if i != actPage %}
-                            <li><a href="{{ i }}">{{ i }}</a></li>
-                        {% else %}
-                            <li class="active"><a href="{{ i }}">{{ i }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    <li><a href="{{ nextPage }}">Next</a></li>
-                </ul>
-            </div>
-        </div>
-        <footer class="announce-home">
+        <footer class="announce-post">
             Powered by Django, Bootstrap
         </footer>
     </body>
