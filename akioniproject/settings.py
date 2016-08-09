@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'lab',
     'about',
     'comment',
+    'auth_',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -128,3 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     '/home/hrsonion/Desktop/Github/07akioni-s-website/static/'
 ]
+
+LOGIN_URL = '/auth/login/'
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']

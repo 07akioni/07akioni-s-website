@@ -23,6 +23,10 @@
                     <li class="active"><a href="/comment">Comment</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
+                {% if user.is_authenticated %}
+                <span style="position:relative;left:505px;font-size:15px;top:12px">Hello, {{ user.username }} !</span>
+                <a href="/auth/logout/" style="position:relative;left:505px;top:12px;font-size:15px;">[logout]</a>
+                {% endif %}
             </div>
         </nav>
         <div class="container blog-content">
@@ -49,7 +53,7 @@
                             </div>
                             <hr>
                             <div class="entry-info-body">
-                                <p style="color:grey;font-size:15px">{{ post.timestamp }}</p>
+                                <p style="color:grey;font-size:15px">由 {{ post.username }} 发表于 {{ post.timestamp }}</p>
                             </div>
                         </div>
                     </div>

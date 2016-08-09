@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^lab/', include('lab.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^comment/', include('comment.urls')),
+    url(r'^auth/', include('auth_.urls')),
     url(r'^$', blog.views.homePage),
 ]
